@@ -13,7 +13,7 @@
 	</header>
 	<div class="clearfix"></div>
 	<section id="section-home1" class="container-fluid p-lr-none p-tb-md bg-f1f">		
-		Body code should be here
+		
 	</section>
 	<div class="clearfix"></div>
 	<footer>
