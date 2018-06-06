@@ -19,7 +19,7 @@ Downloaded from get bootstrap
 <link href="css/bootstrap.min.css" rel="stylesheet">  -->
 
 <!--Created from custom codes-->
-<link href="../assets/css/freaking-custom.css" rel="stylesheet">
+<!--<link href="../assets/css/freaking-custom.css" rel="stylesheet">-->
 
 <!--Your custom css code-->
-<!--<link href="css/style.css" rel="stylesheet">-->
+<link href="css/style.css" rel="stylesheet">

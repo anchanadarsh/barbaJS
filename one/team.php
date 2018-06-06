@@ -16,17 +16,13 @@
     <div class="clearfix"></div>
     <div id="barba-wrapper">
         <div class="barba-container">
-            <section id="index" class="container-fluid">
+            <section id="team" class="container-fluid">
 
             </section>
         </div>
     </div>
     <div class="clearfix"></div>
     <?php include '_partial/footer-scripts.php' ?>
-    <script>
-        
-
-    </script>
 </body>
 
 </html>
