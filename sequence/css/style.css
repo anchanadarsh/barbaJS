@@ -1,0 +1,71 @@
+.full_hw, #index, #about, #team, #contact {
+  height: calc(100vh - 52px);
+  width: 100%; }
+
+.default_transition, #barba-wrapper .barba-container {
+  transition: all 0.5s linear; }
+
+.navbar {
+  margin: 0;
+  border-radius: 0; }
+
+#barba-wrapper {
+  overflow-x: hidden;
+  height: 200vh; }
+  #barba-wrapper .barba-container {
+    position: relative; }
+
+.bg_prop, #index, #about, #team, #contact {
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .bg_prop .section_title, #index .section_title, #about .section_title, #team .section_title, #contact .section_title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    mix-blend-mode: difference; }
+    .bg_prop .section_title h2, #index .section_title h2, #about .section_title h2, #team .section_title h2, #contact .section_title h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 64px;
+      margin: 0; }
+
+#index {
+  background-image: url(../img/1.jpg); }
+
+#about {
+  background-image: url(../img/2.jpg); }
+
+#team {
+  background-image: url(../img/3.jpg); }
+
+#contact {
+  background-image: url(../img/4.jpg); }
+
+.wipe_down, .wipe_up {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: -100%;
+  background-color: aquamarine;
+  z-index: 1000; }
+
+.wipe_up {
+  top: 100%; }
+
+.divider_container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 100%;
+  margin: 0;
+  background-color: transparent;
+  z-index: 1000; }
+  .divider_container .dividers {
+    height: 100%;
+    background-color: red;
+    transform: translateY(0%);
+    display: none; }
+
+/*# sourceMappingURL=style.css.map */

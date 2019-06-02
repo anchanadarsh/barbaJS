@@ -1,0 +1,65 @@
+.full_hw {
+    height: calc(100vh - 52px);
+    width: 100%;
+}
+
+.default_transition {
+    transition: all 0.5s linear;
+}
+
+.navbar {
+    margin: 0;
+    border-radius: 0;
+}
+
+#barba-wrapper {
+    overflow-x: hidden;
+	height: 200vh;
+    .barba-container {
+        @extend .default_transition;
+        position: relative;
+    }
+}
+
+#index {
+    @extend .full_hw;
+	background: url(../img/1.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#about {
+    @extend .full_hw;
+	background: url(../img/2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#team {
+    @extend .full_hw;
+    background: url(../img/3.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#contact {
+    @extend .full_hw;
+    background: url(../img/4.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.wipe_down{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: -100%;
+	background-color: aquamarine;
+	z-index: 1000;
+}
+
+.wipe_up{
+	@extend .wipe_down;
+	top: 100%;
+//	background-color: blueviolet;
+}
