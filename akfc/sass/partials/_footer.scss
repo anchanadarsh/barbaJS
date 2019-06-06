@@ -1,0 +1,151 @@
+.no_padd {
+    padding: 0;
+}
+
+.footer {
+    @extend .relative_box;
+
+    .top_footer {
+        background-image: url(../img/footer/footer.jpg);
+        padding: 20px 0;
+
+        .footer_list_wrap {
+            text-align: center;
+
+            .footer_list {
+                display: inline-block;
+                vertical-align: top;
+                text-align: left;
+                padding-left: 15px;
+                padding-right: 15px;
+
+                &:nth-child(4) {
+                    @media only screen and (max-width: 992px) and (min-width: 768px) {
+                        clear: both;
+                    }
+                }
+            }
+        }
+
+        .footer_text {
+            a {
+                text-decoration: none;
+            }
+
+            h5 {
+                color: #4891ca;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+            
+            .btn_download_profile{
+                @include sm-down{
+                    margin-left: 0;
+                }
+            }
+
+            .font_icon {
+                form {
+                    position: relative;
+                    margin-top: 10px;
+
+                    input {
+                        width: 100%;
+                        border: 0;
+                        font-size: 14px;
+                        background: #c7c7c7;
+                        letter-spacing: 1px;
+                        padding: 10px 20px;
+
+                        @media only screen and (max-width: 991px) and (min-width: 768px) {
+                            padding: 10px 4px;
+                        }
+                    }
+
+                    .submit_btn {
+                        @extend .rel_y_center;
+                        right: 10px;
+                        border: 0;
+                        color: $color_primary;
+                        font-size: 18px;
+                        box-shadow: none;
+                        text-shadow: none;
+                        background: transparent;
+                        background-image: none;
+
+                        @media only screen and (max-width: 991px) and (min-width: 768px) {
+                            right: 3px;
+                        }
+                    }
+                }
+            }
+
+            ul {
+                margin-top: 26px;
+
+                li {
+                    display: inline-block;
+                    background-color: #434344;
+                    border-radius: 50%;
+                    text-align: center;
+                    width: 30px;
+                    height: 30px;
+                    color: darken(white, 35%);
+                    cursor: pointer;
+                    @extend .default_transition;
+
+                    i {
+                        font-size: 16px;
+                        line-height: 30px;
+                        text-align: center;
+                    }
+                    &:hover{
+                        background-color: #222;
+                        color: $color_primary;
+                    }
+                }
+            }
+
+            h6 {
+                color: $color_primary;
+                font-size: 16px;
+            }
+
+            p {
+                color: #a3a2a2;
+                font-size: 15px;
+                line-height: 24px;
+            }
+        }
+    }
+
+    .footer_bottom {
+        background-color: #111015;
+        padding: 15px 0;
+        color: #fff;
+
+        .footer_bottom_text {
+            p {
+                font-size: 14px;
+                letter-spacing: 0.7px;
+
+                @media only screen and (max-width: 767px) {
+                    text-align: center;
+                }
+            }
+        }
+
+        .footer_bottom_text_1 {
+            display: none;
+            p {
+                font-size: 14px;
+                text-align: right;
+                letter-spacing: 0.7px;
+
+                @media only screen and (max-width: 767px) {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

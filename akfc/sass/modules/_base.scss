@@ -1,0 +1,513 @@
+/*	==========================================================================
+	Author: Mvishal Shukla
+	Updated: --/--/--
+	Notes: Hand Coded SCSS.
+	========================================================================== */
+
+/*	==========================================================================
+	Table of Contents For Base:
+	    #Font Setting
+		#html, body
+		#Horizontal Space
+		    *h-small-space
+		    *h-medium-space
+		    *h-large-space
+		#Top-align
+		#Vertical-align
+		#Bottom-align
+		#Responsive Grid
+		#TextField
+		#TextArea
+		#SelectBox
+	========================================================================== */
+
+/*	==========================================================================
+		#Font Setting
+	========================================================================== */
+
+/*	==========================================================================
+		#html,body
+	========================================================================== */
+
+html {
+	height: 100%;
+	background-color: $color-white;
+
+	body {
+		height: 100%;
+		background-color: $color-white;
+		font-family: $font_text;
+		font-size: 16px;
+		line-height: 1.5;
+		letter-spacing: 1.5px;
+
+		@include sm-down {
+			font-size: 14px;
+		}
+	}
+}
+
+/*	==========================================================================
+		#Horizontal Space
+	========================================================================== */
+
+.h-small-space {
+	height: $height-small-space;
+}
+
+.h-medium-space {
+	height: $height-medium-space;
+}
+
+.h-large-space {
+	height: $height-large-space;
+}
+
+/*	==========================================================================
+		#Top-align
+	========================================================================== */
+
+.top-align-container {
+	@include mv-align(inner-talign-container, top);
+}
+
+/*	==========================================================================
+		#Vertical-align
+	========================================================================== */
+
+.vertical-align-container {
+	@include mv-align(inner-valign-container, middle);
+}
+
+/*	==========================================================================
+		#Bottom-align
+	========================================================================== */
+
+.bottom-align-container {
+	@include mv-align(inner-balign-container, bottom);
+}
+
+/*	==========================================================================
+		#Responsive Grid
+	========================================================================== */
+
+.grid-container {
+	@include mv-border;
+	box-sizing: border-box;
+	width: 100%;
+
+	&:after {
+		content: "";
+		clear: both;
+		display: block;
+	}
+
+	.grid {
+		box-sizing: border-box;
+		width: (100%/3);
+		float: left;
+		height: 50px;
+		@include mv-border;
+		padding: 0 30px;
+
+		@include mv-media(max, 600px) {
+			width: 100%;
+			padding-bottom: 30px;
+		}
+
+		;
+	}
+}
+
+/*	==========================================================================
+		#TextField
+	========================================================================== */
+
+input[type="text"] {
+	box-sizing: border-box;
+}
+
+/*	==========================================================================
+		#TextArea
+	========================================================================== */
+
+textarea {
+	box-sizing: border-box;
+}
+
+/*	==========================================================================
+		#SelectBox
+	========================================================================== */
+
+select {
+	box-sizing: border-box;
+}
+
+
+//my scss
+
+
+//scrollbar color
+
+/* width */
+::-webkit-scrollbar {
+	width: 5px;
+	background: #333;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	//    box-shadow: inset 0 0 5px grey;
+	border-radius: 50px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $color_primary;
+	border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: darken($color_primary, 5%);
+}
+
+//placeholder color
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #000 !important;
+	opacity: 1;
+	/* Firefox */
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #000 !important;
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #000 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $mostin_outline;
+	letter-spacing: 0;
+}
+
+.hide_on_mobile {
+	display: block !important;
+
+	@include sm-down {
+		display: none !important;
+	}
+
+	&.desktop_inline {
+		display: inline !important;
+
+		@include sm-down {
+			display: none !important;
+		}
+	}
+}
+
+.show_on_mobile {
+	display: none !important;
+
+	@include sm-down {
+		display: block !important;
+	}
+}
+
+.rem_link_style {
+	text-decoration: none !important;
+	color: inherit;
+
+	&:hover {
+		color: inherit;
+	}
+
+	&:active {
+		color: inherit;
+	}
+	
+	&:focus {
+		color: inherit;
+	}
+}
+
+.relative_box {
+	position: relative;
+	min-height: 1px;
+}
+
+.full_overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.default_transition {
+	transition: all 500ms ease-out;
+}
+
+.default_slider_transition {
+	transition: all 700ms ease-out;
+}
+
+.btn_project_default {
+	font-size: 12px;
+	background-image: none;
+	border-radius: 0;
+	border: 0;
+	letter-spacing: 2px;
+	padding: 10px 35px;
+	margin: 20px;
+	box-shadow: none;
+	text-shadow: none;
+	background-color: $color_primary;
+	color: white;
+	outline: none !important;
+	text-transform: uppercase;
+
+	@media only screen and (max-width: 767px) {
+		padding: 8px 18px;
+	}
+
+	&:hover {
+		background-color: $color_primary;
+		color: white;
+	}
+
+	&:active {
+		background-color: $color_primary;
+		color: white;
+	}
+
+	&:focus {
+		background-color: $color_primary;
+		color: white;
+	}
+}
+
+.loader_overlay {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: #222;
+	z-index: 1000;
+
+	.loader_spinner {
+		position: absolute;
+		top: calc(50% - 60px);
+		left: calc(50% - 60px);
+		border: 5px solid rgba(0, 0, 0, 0.1);
+		border-radius: 50%;
+		border-top: 5px solid rgba(255, 255, 255, 0.3);
+		border-left: 5px solid rgba(255, 255, 255, 0.3);
+		border-bottom: 5px solid rgba(255, 255, 255, 0.3);
+		border-right: 5px solid rgba(255, 255, 255, 1);
+		width: 120px;
+		height: 120px;
+		-webkit-animation: spin 2s linear infinite;
+		animation: spin 2s linear infinite;
+	}
+}
+
+.scroll_down {
+	position: absolute;
+	width: 30px;
+	height: 50px;
+	border: 2px solid #999;
+	border-radius: 50px;
+	bottom: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 2px;
+		height: 8px;
+		background: #999;
+		@include animation(updown 1s infinite linear);
+	}
+}
+
+.no_pad {
+	padding: 0 !important;
+}
+
+.no_marg {
+	margin: 0 !important;
+}
+
+.rel_y_center {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.rel_x_center {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.rel_xy_center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#nav-icon3 {
+	width: 24px;
+	height: 18px;
+	left: 5%;
+	margin-left: 10px;
+	@extend .rel_y_center;
+	@extend .default_transition;
+	cursor: pointer;
+	z-index: 12;
+
+	@include sm-up {
+		display: none;
+	}
+
+	@include sm-down {
+		left: 0;
+		margin-left: 25px;
+		top: 25px;
+		transform: none;
+		position: fixed;
+		mix-blend-mode: difference;
+	}
+
+	span {
+		display: block;
+		position: absolute;
+		height: 2px;
+		width: 100%;
+		background: white;
+		border-radius: 9px;
+		opacity: 1;
+		left: 0;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+
+		&:nth-child(1) {
+			top: 0px;
+		}
+
+		&:nth-child(2) {
+			top: 7px;
+		}
+
+		&:nth-child(3) {
+			top: 7px;
+		}
+
+		&:nth-child(4) {
+			top: 14px;
+		}
+	}
+
+	&.open {
+		span {
+			&:nth-child(1) {
+				top: 7px;
+				width: 0%;
+				left: 50%;
+			}
+
+			&:nth-child(2) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+
+			&:nth-child(4) {
+				top: 7px;
+				width: 0%;
+				left: 50%;
+			}
+		}
+	}
+}
+
+#thank-you-msg {
+	display: none;
+	font-size: 20px;
+	color: green;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.inside_page_banner {
+	@extend .relative_box;
+	height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	.inside_page_text {
+		@extend .rel_xy_center;
+
+		.inside_page_title {
+			margin: 0;
+			font-size: 152px;
+			color: white;
+			font-family: $big_noodle_titling;
+			font-weight: bold;
+			letter-spacing: 20px;
+			transform: translateY(-50px);
+
+			@include xl-down {
+				font-size: 108px;
+			}
+		}
+	}
+}
+
+.inside_page_content {
+	min-height: 100vh;
+	background-color: white;
+}
+
+.section_title {}
+
+$cursor_dim:15px;
+$double_cursor_dim:30px;
+
+.custom_cursor_wrapper {
+	width: $cursor_dim;
+	height: $cursor_dim;
+	position: absolute;
+	top: -($cursor_dim/2);
+	left: -($cursor_dim/2);
+	border-radius: 50%;
+	background-color: #d1d2d3;
+	transition: all 0.3s ease-out;
+	pointer-events: none;
+
+	@include mdl-down {
+		display: none;
+	}
+
+}

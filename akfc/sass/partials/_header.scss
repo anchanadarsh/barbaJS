@@ -1,0 +1,171 @@
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 5;
+    padding-left: 5%;
+    padding-right: 5%;
+    @extend .default_transition;
+
+    @include sm-down {
+        display: none;
+    }
+
+    .header_content {
+        @extend .relative_box;
+
+        .main_logo {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            max-width: 150px;
+            display: inline-block;
+            @extend .default_transition;
+
+            @include md-down {
+                max-width: 100px;
+            }
+        }
+
+        .header_links {
+            @extend .rel_y_center;
+            right: 0;
+
+            li {
+                display: inline-block;
+                @extend .default_transition;
+                transition-duration: 0.2s;
+                color: white;
+                font-size: 14px;
+                text-transform: uppercase;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                @include md-down {
+                    font-size: 11px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+
+                &:hover {
+                    color: $color_primary;
+                }
+
+                a {}
+            }
+
+            .dropmenu {
+                @extend .relative_box;
+
+                .menu_toggle_icon {
+                    i {
+                        transition: all linear 0.3s;
+                    }
+
+                    &.invert {
+                        i {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                .droplist {
+                    visibility: hidden;
+                    opacity: 0;
+                    @extend .default_transition;
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    min-width: 100%;
+                    width: max-content;
+
+                    &.drop_show {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    .droplist_item {
+                        padding: 10px 15px;
+                        display: block;
+                        @extend .default_transition;
+                        background-color: rgba(0, 0, 0, 0.9);
+                        color: darken(white, 40%);
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 1);
+                            color: darken(white, 10%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.header_with_bg {
+        background-color: transparentize(#262626, 0.05);
+
+        .header_content {
+            .main_logo {
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+
+            .header_links {
+                @extend .rel_y_center;
+                right: 0;
+
+                li {
+                    color: white;
+
+                    &:hover {
+                        color: $color_primary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.social_fix_box {
+    @extend .rel_y_center;
+    position: fixed;
+    background-color: white;
+    right: 15px;
+    padding: 20px 15px;
+    z-index: 10;
+    border-radius: 50px;
+    
+    @include sm-down{
+        display: none;
+    }
+
+    .social_icons_item {
+        li{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            margin: 10px 0px;
+            color: white;
+            border-radius: 50%;
+            font-size: 14px;
+            &.facebook{
+                background-color: #3b5998;
+            }
+            &.linkedin{
+                background-color: #0077B5;
+            }
+            &.youtube{
+                background-color: #c4302b ;
+            }
+            &.instagram{
+                background-color: #833AB4;
+            }
+            
+            i{
+                line-height: 30px;
+            }
+        }
+    }
+}

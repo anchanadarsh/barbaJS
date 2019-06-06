@@ -1,0 +1,214 @@
+#index_page {
+	@extend .relative_box;
+	height: 100vh;
+	overflow: hidden;
+
+	$index_transition: all 0.9s ease-in-out;
+
+	.anim_area {
+		height: 100vh;
+		width: 100%;
+		overflow: hidden;
+
+		.text_bg_wrapper {
+			height: 100%;
+			width: 100%;
+			background-image: url(../img/home/black_bg.jpg);
+			background-position: center center;
+			background-size: cover;
+			@extend .relative_box;
+			transition: $index_transition;
+
+			.intro_sec_with_logo {
+				@extend .full_overlay;
+				height: 100%;
+				width: 100vw;
+				background-image: url(../img/home/black_bg.jpg);
+				background-position: center center;
+				background-size: cover;
+				z-index: 4;
+				transition: all 0.7s ease-in-out;
+
+				&.moveUp {
+					top: -100%;
+				}
+
+				.logo_big_img {
+					@extend .rel_xy_center;
+					z-index: 2;
+
+					&.logo_anim_2 {
+						transform: translate(-50%, -41%);
+						transition: all 1.5s ease-in-out;
+					}
+				}
+
+				.show_progress {
+					position: absolute;
+					right: 100px;
+					bottom: 100px;
+					width: 150px;
+					height: 8px;
+					border: 1px solid white;
+
+					.fill {
+						display: block;
+						height: 100%;
+						width: 0%;
+						background-color: white;
+						transition: all 3s ease-in;
+					}
+				}
+			}
+
+			#slider_content_back {
+				@extend .full_overlay;
+				z-index: 1;
+
+				.slide_wrapper_back {
+					width: 100%;
+					height: 100%;
+
+					.slide_back_item {
+						width: 100%;
+						height: 100vh;
+						background-size: cover;
+						background-position: center center;
+						background-repeat: no-repeat;
+
+						&:nth-child(1) {
+							background-image: url('../img/home/film_bg.jpg');
+						}
+
+						&:nth-child(2) {
+							background-image: url('../img/home/tv_bg.jpg');
+						}
+
+						&:nth-child(3) {
+							background-image: url('../img/home/1.jpg');
+						}
+
+						&:nth-child(4) {
+							background-image: url('../img/home/black_bg.jpg');
+						}
+					}
+				}
+			}
+
+			.canvas_area {
+				@extend .relative_box;
+				height: 100%;
+				width: 100vw;
+				z-index: 2;
+				transition: all 0.3s linear;
+				transform: translateX(0) translateY(0);
+			}
+
+			#slider_content {
+				@extend .full_overlay;
+				transform: scale(1);
+				transition: all 1.2s ease-in-out;
+				opacity: 0;
+			}
+
+			$text_box_W : 50vw;
+			$text_contactbox_W : 90vw;
+			$text_logoImg_W :75vw;
+
+			.text_wrap {
+				position: absolute;
+				left: 0;
+				top: 10vh;
+				height: 100%;
+				width: 100%;
+				transition: $index_transition;
+				z-index: 3;
+				opacity: 0;
+
+				&.text_wrap_fadeIn {
+					top: 0;
+					opacity: 1;
+				}
+
+				.texts {
+					height: 100%;
+					width: $text_box_W;
+					@extend .relative_box;
+					float: left;
+					transform: scale(1);
+					transition: $index_transition;
+					transition-duration: 1000ms;
+
+					&.logo_img {
+						width: $text_logoImg_W;
+
+						.logo_big_img {
+							@extend .rel_xy_center;
+						}
+					}
+
+					.catText {
+						@extend .rel_xy_center;
+						margin: 0;
+						font-size: 152px;
+						font-family: $big_noodle_titling;
+						font-weight: bold;
+						letter-spacing: 20px;
+
+						@include xl-down {
+							font-size: 108px;
+						}
+
+						a {
+							display: block;
+							color: transparentize(white, 0.8);
+
+							&:focus {
+								outline: 0px;
+							}
+
+							&:active {
+								outline: 0px;
+							}
+						}
+					}
+
+					path {
+						fill: transparent;
+						transform: translateY(30%);
+					}
+
+					text {
+						fill: transparentize(white, 0.8);
+					}
+
+					&.slick-slide {
+						height: 100vh;
+
+						&:focus {
+							outline: 0px;
+						}
+
+						&:active {
+							outline: 0px;
+						}
+
+						&.slick-current {
+							.catText {
+								color: white;
+
+								a {
+									color: white;
+								}
+							}
+
+							text {
+								fill: white;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
